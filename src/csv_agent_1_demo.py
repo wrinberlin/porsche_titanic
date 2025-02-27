@@ -29,6 +29,8 @@ from pathlib import Path
 from langchain_experimental.agents import create_csv_agent 
 from langchain_openai import ChatOpenAI 
 
+st.set_page_config(page_title="Ask your CSV")
+
 # Get the current working directory (will be the project root in Streamlit Cloud)
 project_root = Path(os.getcwd()) 
 st.write(f"Current working directory: {project_root}")
@@ -54,7 +56,7 @@ CSV_ID_GPD = "gdp.csv"
 # =============================================================================
 
 def main():
-    st.set_page_config(page_title="Ask your CSV")
+    
     st.header("Ask your CSV")
     
     # Create a placeholder for the image

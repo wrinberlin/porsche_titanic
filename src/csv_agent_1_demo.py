@@ -31,6 +31,10 @@ from langchain_openai import ChatOpenAI
 
 # Get the current working directory (will be the project root in Streamlit Cloud)
 project_root = Path(os.getcwd()) 
+st.write(f"Current working directory: {project_root}")
+
+project_root = Path(__file__).resolve().parent.parent  # Go up one level
+st.write(f"Current working directory: {project_root}")
 
 # =============================================================================
 # Paths and Variables

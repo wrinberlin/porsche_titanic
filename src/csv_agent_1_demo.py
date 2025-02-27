@@ -49,6 +49,13 @@ if not IMAGE_PATH_TITANIC.exists():
     st.error(f"❌ Image not found: {IMAGE_PATH_TITANIC}")
 else:
     st.success(f"✅ Image exists: {IMAGE_PATH_TITANIC}")
+    
+# List all files in the illustrations folder
+illustrations_path = project_root / "illustrations"
+if illustrations_path.exists():
+    st.write("Files in illustrations folder:", os.listdir(illustrations_path))
+else:
+    st.error("❌ illustrations folder does not exist")
 
 IMAGE_PATH_CLIMATE = project_root / "illustrations" / "extremeweather.jpg"
 IMAGE_PATH_GDP = project_root / "illustrations" / "economic_growth.jpg"

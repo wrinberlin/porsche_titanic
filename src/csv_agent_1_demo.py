@@ -45,6 +45,9 @@ st.write(f"Current working directory: {project_root}")
 # Adjust paths relative to the working directory
 IMAGE_PATH_TITANIC = project_root / "illustrations" / "titanic.jpg"
 
+image_path = "/mount/src/porsche_titanic/illustrations/titanic.jpg"
+st.write(f"🛠️ Read Permission: {os.access(image_path, os.R_OK)}")
+
 if not IMAGE_PATH_TITANIC.exists():
     st.error(f"❌ Image not found: {IMAGE_PATH_TITANIC}")
 else:

@@ -42,8 +42,10 @@ st.write(f"Current working directory: {project_root}")
 # Paths and Variables
 # =============================================================================
 
-# Adjust paths relative to the working directory
-IMAGE_PATH_TITANIC = project_root / "illustrations" / "titanic.jpg"
+IMAGE_PATH_TITANIC = project_root / "titanic.jpg"
+IMAGE_PATH_CLIMATE = project_root / "extremeweather.jpg"
+IMAGE_PATH_GDP = project_root / "economic_growth.jpg"
+
 
 image_path = "/mount/src/porsche_titanic/illustrations/titanic.jpg"
 st.write(f"🛠️ Read Permission: {os.access(image_path, os.R_OK)}")
@@ -59,9 +61,6 @@ if illustrations_path.exists():
     st.write("Files in illustrations folder:", os.listdir(illustrations_path))
 else:
     st.error("❌ illustrations folder does not exist")
-
-IMAGE_PATH_CLIMATE = project_root / "illustrations" / "extremeweather.jpg"
-IMAGE_PATH_GDP = project_root / "illustrations" / "economic_growth.jpg"
 
 CSV_ID_CLIMATE = "GlobalLandTemperaturesByMajorCity.csv"
 CSV_ID_TITANIC = "titanic_1.csv"

@@ -46,15 +46,6 @@ IMAGE_PATH_TITANIC = project_root / "titanic.jpg"
 IMAGE_PATH_CLIMATE = project_root / "extremeweather.jpg"
 IMAGE_PATH_GDP = project_root / "economic_growth.jpg"
 
-
-image_path = "/mount/src/porsche_titanic/illustrations/titanic.jpg"
-st.write(f"🛠️ Read Permission: {os.access(image_path, os.R_OK)}")
-
-if not IMAGE_PATH_TITANIC.exists():
-    st.error(f"❌ Image not found: {IMAGE_PATH_TITANIC}")
-else:
-    st.success(f"✅ Image exists: {IMAGE_PATH_TITANIC}")
-
 CSV_ID_CLIMATE = "GlobalLandTemperaturesByMajorCity.csv"
 CSV_ID_TITANIC = "titanic_1.csv"
 CSV_ID_GPD = "gdp.csv"

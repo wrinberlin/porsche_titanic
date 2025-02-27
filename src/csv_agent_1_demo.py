@@ -44,7 +44,12 @@ st.write(f"Current working directory: {project_root}")
 
 # Adjust paths relative to the working directory
 IMAGE_PATH_TITANIC = project_root / "illustrations" / "titanic.jpg"
-st.write(IMAGE_PATH_TITANIC)
+
+if not IMAGE_PATH_TITANIC.exists():
+    st.error(f"❌ Image not found: {IMAGE_PATH_TITANIC}")
+else:
+    st.success(f"✅ Image exists: {IMAGE_PATH_TITANIC}")
+
 IMAGE_PATH_CLIMATE = project_root / "illustrations" / "extremeweather.jpg"
 IMAGE_PATH_GDP = project_root / "illustrations" / "economic_growth.jpg"
 

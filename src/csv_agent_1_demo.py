@@ -54,13 +54,6 @@ if not IMAGE_PATH_TITANIC.exists():
     st.error(f"❌ Image not found: {IMAGE_PATH_TITANIC}")
 else:
     st.success(f"✅ Image exists: {IMAGE_PATH_TITANIC}")
-    
-# List all files in the illustrations folder
-illustrations_path = project_root / "illustrations"
-if illustrations_path.exists():
-    st.write("Files in illustrations folder:", os.listdir(illustrations_path))
-else:
-    st.error("❌ illustrations folder does not exist")
 
 CSV_ID_CLIMATE = "GlobalLandTemperaturesByMajorCity.csv"
 CSV_ID_TITANIC = "titanic_1.csv"
@@ -90,7 +83,7 @@ def main():
         else: 
             image_placeholder.image(IMAGE_PATH_TITANIC)
         user_question = st.text_input("Ask a question about your CSV: ")
-        llm = ChatOpenAI(temperature=0)
+        llm = ChatOpenAI(temperature=0, openai_api_key=OPENAI_API_KEY)
         agent = create_csv_agent(llm, user_csv, verbose=True, 
                                  allow_dangerous_code=True)
         if user_question is not None and user_question != "": 

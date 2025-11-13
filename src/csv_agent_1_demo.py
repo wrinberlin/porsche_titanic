@@ -26,8 +26,9 @@ OPENAI_API_KEY = st.secrets["openai"]["api_key"]
 import os
 from pathlib import Path
 
-from langchain.agents import create_csv_agent
-from langchain_openai import ChatOpenAI 
+from langchain.agents import CSVAgent
+from langchain.chat_models import ChatOpenAI
+
 from langchain.prompts import PromptTemplate
 
 st.set_page_config(page_title="Ask your CSV")
@@ -103,7 +104,7 @@ def main():
         llm = ChatOpenAI(model="gpt-4o", temperature=0, 
                          openai_api_key=OPENAI_API_KEY)
         # Create the agent with the custom prompt
-        agent = create_csv_agent(
+        agent = agent = CSVAgent.from_llm_and_csv_path(
             llm, 
             user_csv, 
             verbose=True, 

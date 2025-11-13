@@ -26,7 +26,7 @@ OPENAI_API_KEY = st.secrets["openai"]["api_key"]
 import os
 from pathlib import Path
 
-from langchain_experimental.agents import create_csv_agent 
+from langchain.agents import create_csv_agent
 from langchain_openai import ChatOpenAI 
 from langchain.prompts import PromptTemplate
 
@@ -108,7 +108,8 @@ def main():
             user_csv, 
             verbose=True, 
             allow_dangerous_code=True, 
-            prompt=custom_prompt
+            prompt=custom_prompt,
+            handle_parsing_errors=True
         )
         if user_question is not None and user_question != "": 
             
